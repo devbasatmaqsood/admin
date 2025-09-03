@@ -67,8 +67,8 @@ apiInstance.interceptors.request.use(
      typeof window !== "undefined" ? sessionStorage.getItem("token") : null;
    config.headers = config.headers ?? {};
    if (token) {
-     // If your API expects Bearer, use Bearer ${token} instead:
-     (config.headers as any).Authorization = ${token};
+// If your API expects Bearer, use Bearer ${token} instead:
+     (config.headers as any).Authorization = `Bearer ${token}`;
    } else {
      delete (config.headers as any).Authorization;
    }
